@@ -46,6 +46,8 @@ Input number for where you want your piece
 board = ["empty",".",".",".",".",".",".",".",".","."]
 
 def dis():
+    import os
+    os.system("cls")
     print(board[1] + board[2] + board[3] + "\n" + board[4] + board[5] + board[6] + "\n" + board[7] + board[8] + board[9])
 
 def xTurn():

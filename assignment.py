@@ -14,40 +14,22 @@ def factorPair(x,y):
     lis.sort()
     return lis
 
-def cosineLaw(a,b,c,d):
-    return "jeff"
-def toRadians():
-    return "jeff"
-def solution():
-    return "jeff"
-def quadratic():
-    return "jeff"
-
-a = int(input("Enter side A\n"))
-b = int(input("Enter side B\n"))
-c = int(input("Enter side C\n"))
-if a >= b and a >= c:
-    C = a
-    B = b
-    A = c
-if b >= a and b >= c:
-    C = b
-    B = a
-    A = c
-if c >= b and c >= a:
-    C = c
-    B = b
-    A = a
-if A > B:
-    B2 = A
-    A2 = B
-else:
-    B2 = B
-    A2 = A
-An = str(A2)
-Bn = str(B2)
-Cn = str(C)
-if (A2**2) + (B2**2) == (C**2):
-    print(An + "," + Bn + "," + Cn + " form a Pythagorean triple")
-else:
-    print(An + "," + Bn + "," + Cn + " do not form a Pythagorean triple")
+def cosineLaw(a,b,C,oppositeSide):
+    if oppositeSide == True:
+        c = math.sqrt(a**2 + b**2 - 2 * a * b * math.cos(toRadians(C)))
+        return c
+    elif oppositeSide == False:
+        n = quadratic((b**2) , (2 * a * math.cos(toRadians(C))) , (a**2)-(C**2))
+        return solution(n)
+def toRadians(x):
+    return (x * math.pi) / 180
+def solution(n):
+    if n[0] < 0:
+        return n[1]
+    else:
+        return n
+def quadratic(a,b,c):
+    sols = [((-b + (math.sqrt((b**2) - 4 * a * c))) / (2 * a)),((-b - (math.sqrt((b**2) - 4 * a * c))) / (2 * a))]
+    sols.sort()
+    return sols
+print(cosineLaw(3,2,25,False))
