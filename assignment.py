@@ -2,7 +2,7 @@
 
 import math
 
-def tempConversion(x,unit):
+def tempConversion(x,unit="C"):
     if unit == "F":
         return float(round(((x - 32) * (5/9)), 1))
     else:
